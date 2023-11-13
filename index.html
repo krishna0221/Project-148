@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    </head>
+    <body>
+        <a-scene>
+            <a-entity position="0 0 0">
+                <a-camera></a-camera>
+            </a-entity>
+            
+            <a-assets timeout="10000">
+                <a-asset-item id="man" src="./model/3d_scan_man_1/scene.gltf"></a-asset-item>
+                <a-asset-item id="dog" src="./model/dog/scene.gltf"></a-asset-item>
+                <a-asset-item id="bench" src="./model/bench/scene.gltf"></a-asset-item>
+                <a-asset-item id="lamp" src="./model/street_lamp/scene.gltf"></a-asset-item>
+                <img id="night" src="./night.jpg">
+                <img id="road" src="./road.jpg">
+
+            </a-assets>
+<a-sky color="black"></a-sky>
+            <!--Lights in Scene -->
+<a-plane position="0 0 -6" width="10" height="6" length="23" shadow="receive:true" rotation="-90 0 0" src="#road" ></a-plane>
+<a-plane position="0 3 -8" width="10" height="6" shadow="receive:true" rotation="0 0 0" src="#night"></a-plane>
+
+<a-entity></a-entity>
+<!-- man -->
+<a-entity
+scale="0.9 0.9 0.9" gltf-model="#man" position="-1 0.8 -6"
+shadow="cast:true;"
+></a-entity>
+<!-- dog -->
+<a-entity
+scale="0.93 0.93 0.93" gltf-model="#dog" rotation="0 45 0" position="0 0.255 -6"
+shadow="cast:true;"
+></a-entity>
+
+<!-- bench -->
+<a-entity
+scale="0.15 0.15 0.15" gltf-model="#bench" rotation="0 0 0" position="-1 0.02 -7.5"
+shadow="cast:true;"
+></a-entity>
+
+<!-- Lamp -->
+<a-entity
+scale="0.6 0.6 0.5" gltf-model="#lamp" rotation="0 0 0" position="-3 0.02 -6"
+shadow="cast:true;"
+></a-entity>
+</a-entity>
+
+<a-entity
+light="type: point; castShadow: true; color: white; intensity: 2.35" position="-3 3 -6"
+>
+</a-entity>
+<a-entity light="type: ambient;"> </a-entity>
+
+
+
+        </a-scene>
+    </body>
+    </html>
